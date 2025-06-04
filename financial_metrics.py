@@ -18,11 +18,34 @@ def calculate_payback_period(initial_investment: float, annual_cash_flow: float)
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Calculate ROI and Payback period of a project.")
-    parser.add_argument("initial_investment", type=float, help="Initial investment amount")
-    parser.add_argument("annual_cash_flow", type=float, help="Expected annual cash flow")
-    parser.add_argument("years", type=int, nargs="?", default=1, help="Number of years to calculate ROI over")
+    parser = argparse.ArgumentParser(
+        description="Calculate ROI and Payback period of a project."
+    )
+    parser.add_argument(
+        "initial_investment",
+        type=float,
+        nargs="?",
+        help="Initial investment amount",
+    )
+    parser.add_argument(
+        "annual_cash_flow",
+        type=float,
+        nargs="?",
+        help="Expected annual cash flow",
+    )
+    parser.add_argument(
+        "years",
+        type=int,
+        nargs="?",
+        default=1,
+        help="Number of years to calculate ROI over",
+    )
     args = parser.parse_args()
+
+    if args.initial_investment is None:
+        args.initial_investment = float(input("Initial investment: "))
+    if args.annual_cash_flow is None:
+        args.annual_cash_flow = float(input("Annual cash flow: "))
 
     net_profit = args.annual_cash_flow * args.years - args.initial_investment
     roi = calculate_roi(net_profit, args.initial_investment)

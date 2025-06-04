@@ -8,7 +8,8 @@ This repo contains simple Python scripts.
 - `financial_metrics.py` – calculates ROI and payback period.
 
 ### Usage
-Run:
+Run with all parameters on the command line or let the script prompt you for
+missing values:
 
 ```bash
 python3 financial_metrics.py <initial_investment> <annual_cash_flow> [years]
@@ -20,7 +21,8 @@ Example:
 python3 financial_metrics.py 1000 300 5
 ```
 
-This command prints the ROI after 5 years and the payback period.
+This command prints the ROI after 5 years and the payback period. If you omit
+the numeric arguments, the program will ask for them interactively.
 
 For a simple greeting:
 
