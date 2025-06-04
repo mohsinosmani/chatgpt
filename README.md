@@ -4,7 +4,7 @@ This repo contains simple Python scripts.
 
 ## Scripts
 
-- `hellow.py` – prints "hellow world".
+- `hellow.py` – interactively prints a greeting.
 - `financial_metrics.py` – calculates ROI and payback period.
 
 ### Usage
@@ -21,3 +21,11 @@ python3 financial_metrics.py 1000 300 5
 ```
 
 This command prints the ROI after 5 years and the payback period.
+
+For a simple greeting:
+
+```bash
+python3 hellow.py
+```
+
+The script prompts you for a word and prints `hellow <word>`.
